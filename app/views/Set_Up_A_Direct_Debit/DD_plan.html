@@ -1,0 +1,95 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+  <a class="govuk-back-link" href="/url/of/previous/page">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">Set up a Direct Debit</span>
+
+
+
+{{ govukRadios({
+  idPrefix: "select-address",
+  name: "select-address",
+  fieldset: {
+    legend: {
+      text: "Choose a payment plan",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--xl"
+    }
+  },
+  items: [
+    {
+      value: "",
+      text: "£120.00 - paid monthly for 10 months",
+      hint: {
+  text: "You’ll have a user ID if you’ve registered for Self Assessment or filed a tax return online before."
+      }
+    },
+    {
+      value: "",
+      text: "£100.00 - paid monthly for 12 months",
+      hint: {
+  text: "You’ll have a user ID if you’ve registered for Self Assessment or filed a tax return online before."
+      }
+    },
+    {
+      value: "",
+      text: "£1200.00 - paid yearly"
+    },
+    {
+      value: "",
+      text: "£600.00 - paid every 6 months"
+    }
+
+  ]
+}) }}
+
+{{ govukInsetText({
+  text: "Your Direct Debit will automatically be renewed every 12 months unless we receive notice to cancel it from you or your bank."
+}) }}
+
+{{ govukInput({
+  label: {
+    text: "Payment date",
+    classes: "govuk-label--m",
+    isPageHeading: false
+  },
+  classes: "govuk-input--width-4",
+  hint: {
+    text: "The day of the month you would like the payment to be taken. You can select any date except the 31st."
+  },
+  id: "payment-date",
+  name: "payment-date"
+}) }}
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Continue",
+        href: "bank_details"
+      }) }}
+    </div>
+  </div>
+
+{% endblock %}

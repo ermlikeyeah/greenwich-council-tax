@@ -1,0 +1,210 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+  <a class="govuk-back-link" href="/url/of/previous/page">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">Set up a Direct Debit</span>
+      <h1 class="govuk-heading-xl">
+        Check the information you provided before XXXXXing
+      </h1>
+
+      <h2 class="govuk-heading-m">Council tax details</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Council tax account number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          12345678
+        </dd>
+          <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="council_tax_number">
+                Change<span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+      </div>
+      </dl>
+
+
+      <h2 class="govuk-heading-m">Personal details</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Your full name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Simon Colin Wilson
+        </dd>
+          <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="your_personal_details">
+                Change<span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Email address
+        </dt>
+        <dd class="govuk-summary-list__value">
+          simoncwilson@gmail.com
+        </dd>
+          <dd class="govuk-summary-list__actions">
+
+          </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Telephone number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          0797 693 7205
+        </dd>
+          <dd class="govuk-summary-list__actions">
+
+          </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Your address
+        </dt>
+        <dd class="govuk-summary-list__value">
+          42 Harper Crescent,<br />Idle<br />Bradford<br>West Yorkshire<br>BD10 9RY
+        </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="your_address_2">
+              Change<span class="govuk-visually-hidden"> name</span>
+          </a>
+          </dd>
+      </div>
+    </dl>
+
+    <h2 class="govuk-heading-m">Payment plan</h2>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Payment amount and frequency
+      </dt>
+      <dd class="govuk-summary-list__value">
+        £120.00 - paid monthly for 10 months
+      </dd>
+        <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="DD_plan">
+              Change<span class="govuk-visually-hidden"> name</span>
+          </a>
+        </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Payment date
+      </dt>
+      <dd class="govuk-summary-list__value">
+        15th of every month
+      </dd>
+        <dd class="govuk-summary-list__actions">
+
+        </dd>
+    </div>
+  </dl>
+
+      <h2 class="govuk-heading-m">Bank details</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Name on the account
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Mr Simon C Wilson
+        </dd>
+          <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="bank_details">
+                Change<span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Sort code
+        </dt>
+        <dd class="govuk-summary-list__value">
+          00 11 22
+        </dd>
+          <dd class="govuk-summary-list__actions">
+
+          </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Account number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          12345678
+        </dd>
+          <dd class="govuk-summary-list__actions">
+
+          </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Bank name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Bradford Bank
+        </dd>
+          <dd class="govuk-summary-list__actions">
+
+          </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Bank branch
+        </dt>
+        <dd class="govuk-summary-list__value">
+          None
+        </dd>
+          <dd class="govuk-summary-list__actions">
+
+          </dd>
+      </div>
+    </dl>
+
+    <h2 class="govuk-heading-m">Now send your application</h2>
+
+    <p>
+      By submitting this information you are confirming that, to teh best of your knowledge, the details you are proving are correct.
+    </p>
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Accept and send",
+        href: "confirmation"
+      }) }}
+    </div>
+  </div>
+
+{% endblock %}

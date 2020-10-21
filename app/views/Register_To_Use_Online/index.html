@@ -1,0 +1,50 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Register to use online services
+      </h1>
+
+      <form class="form" action="Register_To_Use_Online/provide_mobile_number" method="post">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              How would you prefer to receive your access code?
+            </h1>
+          </legend>
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="receive-code" name="receive-code" type="radio" value="text">
+              <label class="govuk-label govuk-radios__label" for="receive-code">
+                By text message to your mobile telephone
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="receive-code-2" name="receive-code" type="radio" value="post">
+              <label class="govuk-label govuk-radios__label" for="receive-code-2">
+                By letter to your home address
+              </label>
+            </div>
+          </div>
+
+        </fieldset>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+    </form>
+
+    </div>
+  </div>
+
+{% endblock %}

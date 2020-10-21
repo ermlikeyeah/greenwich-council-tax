@@ -1,0 +1,127 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+  <a class="govuk-back-link" href="/url/of/previous/page">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">Set up a Direct Debit</span>
+      <h1 class="govuk-heading-xl">
+        Bank details
+      </h1>
+
+      {{ govukInput({
+        label: {
+          text: "Name on the account"
+        },
+        id: "name",
+        name: "name"
+      }) }}
+
+
+      {{ govukInput({
+        label: {
+          text: "Sort code"
+        },
+        hint: {
+          text: "Must be 6 digits long"
+        },
+        classes: "govuk-input--width-10",
+        id: "sort-code",
+        name: "sort-code"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Account number"
+        },
+        hint: {
+          text: "Must be between 6 and 8 digits long"
+        },
+        classes: "govuk-input--width-10",
+        id: "account-number",
+        name: "account-number"
+      }) }}
+
+
+      {{ govukInput({
+        label: {
+          text: "Bank name"
+        },
+        classes: "govuk-input--width-10",
+        id: "bank-name",
+        name: "bank-name"
+      }) }}
+
+
+{% set bankBranch %}
+{{ govukInput({
+  id: "bank-branch",
+  name: "bank-branch",
+  type: "email",
+  spellcheck: false,
+  classes: "govuk-!-width-one-third",
+  label: {
+    text: "Name of the bank branch"
+  }
+}) }}
+{% endset -%}
+
+
+
+{{ govukRadios({
+  idPrefix: "has-branch",
+  name: "has-branch",
+  fieldset: {
+    legend: {
+      text: "Do you know the branch of the bank?",
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: "Hint."
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes",
+      conditional: {
+        html: bankBranch
+      }
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+  ]
+}) }}
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Continue",
+        href: "check_info_provided"
+      }) }}
+    </div>
+  </div>
+
+{% endblock %}
