@@ -57,6 +57,17 @@ router.post('/Set_Up_A_Direct_Debit/council_tax_number_check', function (req, re
   }
 });
 
+router.post('/Set_Up_A_Direct_Debit/same_address_check', function (req, res) {
+
+  if (req.session.data['same-address'] == 'yes') {
+    res.redirect('DD_plan');
+  } else if (req.session.data['same-address'] == 'no') {
+    res.redirect('your_address');
+  } else {
+    res.redirect('same_address_question');
+  }
+
+});
 
 router.post('/Set_Up_A_Direct_Debit/address_check_check', function (req, res) {
 
