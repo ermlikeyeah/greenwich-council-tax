@@ -1,0 +1,78 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{% endblock%}
+
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Set up a council tax Direct Debit online
+      </h1>
+
+      <h2 class="govuk-heading-l">
+        Before you start
+      </h2>
+
+      <p>
+        You will need
+      </p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          Your council tax account number, found on any Royal Borough of Greenwich council tax bill
+        </li>
+        <li>
+          Your bank account details
+        </li>
+      </ul>
+
+      {{ govukButton({
+        text: "Start now",
+        href: "Set_Up_A_Direct_Debit/council_tax_number",
+        isStartButton: true
+      }) }}
+
+
+            <h2 class="govuk-heading-m">
+              Data protection
+            </h2>
+
+            <p>
+              To find out how the information you provde on this digital service may be used, please see our <a href="#">privacy notice</a>.
+            </p>
+
+
+
+    </div>
+  </div>
+
+{% endblock %}
+
+
+{% block footer %}
+
+{{ govukFooter({
+  meta: {
+    html: 'New footer'
+  }
+}) }}
+
+{% endblock %}
