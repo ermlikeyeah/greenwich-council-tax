@@ -26,6 +26,8 @@
     <div class="govuk-grid-column-two-thirds">
       <span class="govuk-caption-l">Set up a Direct Debit</span>
 
+      <form class="post" method="post" action="address_check">
+
       {{ govukInput({
         label: {
           text: "Council tax account number",
@@ -48,12 +50,11 @@
         text: "If you have a council tax bill for the property, you will find the council tax account number on the front of the bill under the property address."
       }) }}
 
-      {% from "govuk/components/button/macro.njk" import govukButton %}
-
       {{ govukButton({
-        text: "Continue",
-        href: "address_check"
+        text: "Continue"
       }) }}
+
+      </form>
     </div>
   </div>
 

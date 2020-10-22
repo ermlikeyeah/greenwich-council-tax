@@ -26,11 +26,12 @@
     <div class="govuk-grid-column-two-thirds">
       <span class="govuk-caption-l">Set up a Direct Debit</span>
 
+      <form class="post" method="post" action="bank_details">
 
 
 {{ govukRadios({
-  idPrefix: "select-address",
-  name: "select-address",
+  idPrefix: "payment-plan",
+  name: "payment-plan",
   fieldset: {
     legend: {
       text: "Choose a payment plan",
@@ -40,25 +41,25 @@
   },
   items: [
     {
-      value: "",
+      value: "£120.00 - paid monthly for 10 months",
       text: "£120.00 - paid monthly for 10 months",
       hint: {
   text: "You’ll have a user ID if you’ve registered for Self Assessment or filed a tax return online before."
       }
     },
     {
-      value: "",
+      value: "£100.00 - paid monthly for 12 months",
       text: "£100.00 - paid monthly for 12 months",
       hint: {
   text: "You’ll have a user ID if you’ve registered for Self Assessment or filed a tax return online before."
       }
     },
     {
-      value: "",
+      value: "£1200.00 - paid yearly",
       text: "£1200.00 - paid yearly"
     },
     {
-      value: "",
+      value: "£600.00 - paid every 6 months",
       text: "£600.00 - paid every 6 months"
     }
 
@@ -86,9 +87,10 @@
       {% from "govuk/components/button/macro.njk" import govukButton %}
 
       {{ govukButton({
-        text: "Continue",
-        href: "bank_details"
+        text: "Continue"
       }) }}
+
+      </form>
     </div>
   </div>
 

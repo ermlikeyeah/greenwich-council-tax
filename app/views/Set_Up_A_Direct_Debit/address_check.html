@@ -29,6 +29,8 @@
         Check the property address
       </h1>
 
+      <form class="post" method="post" action="correct_council_tax_address">
+
       <p>
         Council tax account number 123445678 is for the property at the address:
       </p>
@@ -41,8 +43,8 @@
 
       {{ govukRadios({
   classes: "govuk-radios--inline",
-  idPrefix: "changed-name",
-  name: "changed-name",
+  idPrefix: "correct-property",
+  name: "correct-property",
   fieldset: {
     legend: {
       text: "Is this the property you want to pay council tax for?",
@@ -64,9 +66,10 @@
       {% from "govuk/components/button/macro.njk" import govukButton %}
 
       {{ govukButton({
-        text: "Continue",
-        href: "your_personal_details"
+        text: "Continue"
       }) }}
+
+      </form>
     </div>
   </div>
 

@@ -37,7 +37,7 @@
           Council tax account number
         </dt>
         <dd class="govuk-summary-list__value">
-          12345678
+          {{ data['council-tax-account-number'] }}
         </dd>
           <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="council_tax_number">
@@ -56,7 +56,7 @@
           Your full name
         </dt>
         <dd class="govuk-summary-list__value">
-          Simon Colin Wilson
+          {{ data['full-name'] }}
         </dd>
           <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="your_personal_details">
@@ -69,7 +69,7 @@
           Email address
         </dt>
         <dd class="govuk-summary-list__value">
-          simoncwilson@gmail.com
+          {{ data['emailAddress'] }}
         </dd>
           <dd class="govuk-summary-list__actions">
 
@@ -80,7 +80,7 @@
           Telephone number
         </dt>
         <dd class="govuk-summary-list__value">
-          0797 693 7205
+          {{ data['phoneNumber'] }}
         </dd>
           <dd class="govuk-summary-list__actions">
 
@@ -91,7 +91,7 @@
           Your address
         </dt>
         <dd class="govuk-summary-list__value">
-          42 Harper Crescent,<br />Idle<br />Bradford<br>West Yorkshire<br>BD10 9RY
+          {{ data['account-address'] }}
         </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="your_address_2">
@@ -109,7 +109,7 @@
         Payment amount and frequency
       </dt>
       <dd class="govuk-summary-list__value">
-        £120.00 - paid monthly for 10 months
+        {{ data['payment-plan'] }}
       </dd>
         <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="DD_plan">
@@ -122,7 +122,7 @@
         Payment date
       </dt>
       <dd class="govuk-summary-list__value">
-        15th of every month
+        {{ data['payment-date'] }} of every month
       </dd>
         <dd class="govuk-summary-list__actions">
 
@@ -138,7 +138,7 @@
           Name on the account
         </dt>
         <dd class="govuk-summary-list__value">
-          Mr Simon C Wilson
+          {{ data['name-on-account'] }}
         </dd>
           <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="bank_details">
@@ -151,7 +151,7 @@
           Sort code
         </dt>
         <dd class="govuk-summary-list__value">
-          00 11 22
+          {{ data['sort-code'] }}
         </dd>
           <dd class="govuk-summary-list__actions">
 
@@ -162,7 +162,7 @@
           Account number
         </dt>
         <dd class="govuk-summary-list__value">
-          12345678
+          {{ data['bank-account-number'] }}
         </dd>
           <dd class="govuk-summary-list__actions">
 
@@ -173,7 +173,7 @@
           Bank name
         </dt>
         <dd class="govuk-summary-list__value">
-          Bradford Bank
+          {{ data['bank-name'] }}
         </dd>
           <dd class="govuk-summary-list__actions">
 
@@ -184,7 +184,11 @@
           Bank branch
         </dt>
         <dd class="govuk-summary-list__value">
-          None
+          {% if data['bank-branch'] %}
+            {{ data['bank-branch'] }}
+          {% else %}
+              No branch provided
+          {% endif %}
         </dd>
           <dd class="govuk-summary-list__actions">
 
@@ -192,18 +196,18 @@
       </div>
     </dl>
 
+    <form class="post" method="post" action="submit_info">
+
     <h2 class="govuk-heading-m">Now send your application</h2>
 
     <p>
       By submitting this information you are confirming that, to teh best of your knowledge, the details you are proving are correct.
     </p>
 
-      {% from "govuk/components/button/macro.njk" import govukButton %}
 
-      {{ govukButton({
-        text: "Accept and send",
-        href: "confirmation"
-      }) }}
+    <button class="govuk-button" data-module="govuk-button">Accept and send</button>
+
+      </form>
     </div>
   </div>
 

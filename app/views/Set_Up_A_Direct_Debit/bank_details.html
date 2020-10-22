@@ -29,12 +29,14 @@
         Bank details
       </h1>
 
+      <form class="post" method="post" action="check_info_provided">
+
       {{ govukInput({
         label: {
           text: "Name on the account"
         },
-        id: "name",
-        name: "name"
+        id: "name-on-account",
+        name: "name-on-account"
       }) }}
 
 
@@ -58,8 +60,8 @@
           text: "Must be between 6 and 8 digits long"
         },
         classes: "govuk-input--width-10",
-        id: "account-number",
-        name: "account-number"
+        id: "bank-account-number",
+        name: "bank-account-number"
       }) }}
 
 
@@ -77,7 +79,7 @@
 {{ govukInput({
   id: "bank-branch",
   name: "bank-branch",
-  type: "email",
+  type: "text",
   spellcheck: false,
   classes: "govuk-!-width-one-third",
   label: {
@@ -115,12 +117,12 @@
   ]
 }) }}
 
-      {% from "govuk/components/button/macro.njk" import govukButton %}
 
       {{ govukButton({
-        text: "Continue",
-        href: "check_info_provided"
+        text: "Continue"
       }) }}
+
+      </form>
     </div>
   </div>
 

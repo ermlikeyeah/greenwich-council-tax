@@ -29,6 +29,7 @@
         Your personal details
       </h1>
 
+      <form class="post" method="post" action="your_address">
 
       {{ govukInput({
         label: {
@@ -45,7 +46,7 @@
         },
         classes: "govuk-input--width-10",
         id: "email-address",
-        name: "email-address"
+        name: "emailAddress"
       }) }}
 
       {{ govukInput({
@@ -54,16 +55,18 @@
         },
         classes: "govuk-input--width-10",
         id: "telephone-number",
-        name: "telephone-number"
+        name: "phoneNumber"
       }) }}
 
 
       {% from "govuk/components/button/macro.njk" import govukButton %}
 
       {{ govukButton({
-        text: "Continue",
-        href: "your_address"
+        text: "Continue"
       }) }}
+
+      </form>
+
     </div>
   </div>
 
