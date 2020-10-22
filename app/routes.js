@@ -38,11 +38,30 @@ router.post('/Set_Up_A_Direct_Debit/submit_info', function (req, res) {
 });
 
 
+router.post('/Set_Up_A_Direct_Debit/council_tax_number_check', function (req, res) {
 
-router.post('/Set_Up_A_Direct_Debit/correct_council_tax_address', function (req, res) {
+  if (req.session.data['council-tax-account-number']) {
+
+    if( req.session.data['council-tax-account-number'].length < 8 ) {
+
+      res.redirect('council_tax_number_no_number');
+
+    } else {
+
+      res.redirect('address_check');
+
+    }
+
+  } else  {
+    res.redirect('council_tax_number_no_number');
+  }
+});
+
+
+router.post('/Set_Up_A_Direct_Debit/address_check_check', function (req, res) {
 
   if (req.session.data['correct-property'] == 'yes') {
-    res.redirect('your_personal_details');
+    res.redirect('amount_due');
   } else if (req.session.data['correct-property'] == 'no') {
     res.redirect('council_tax_number');
   } else {

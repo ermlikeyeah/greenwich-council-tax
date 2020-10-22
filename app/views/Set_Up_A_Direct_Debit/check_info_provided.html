@@ -45,8 +45,22 @@
             </a>
           </dd>
       </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Property address
+        </dt>
+        <dd class="govuk-summary-list__value">
+          123 Main Road
+          Greenwich
+          SE10 1AA
+        </dd>
+          <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="council_tax_number">
+                Change<span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+      </div>
       </dl>
-
 
       <h2 class="govuk-heading-m">Personal details</h2>
 
@@ -86,6 +100,21 @@
 
           </dd>
       </div>
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    Send council tax correspondance by email
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['comms-by-email'] }}
+  </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="communicaton_preferences">
+        Change<span class="govuk-visually-hidden"> name</span>
+    </a>
+    </dd>
+</div>
+
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Your address
