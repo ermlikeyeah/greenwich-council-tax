@@ -1,0 +1,83 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{% endblock%}
+
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Register to use online services
+      </h1>
+
+      <h2 class="govuk-heading-l">
+        Before you start
+      </h2>
+
+
+      <h3 class="govuk-heading-m">
+        Applied for a PIN by post and you have received it?
+      </h3>
+
+      <p>
+        <a href="your_personal_details_for_PIN">Click here<a/>
+        </p>
+
+        <h3 class="govuk-heading-m">
+          Starting setting up
+        </h3>
+
+      <p>
+        You will need
+      </p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          A mobile phone (UK only?)
+        </li>
+        <li>
+          Or a postal address (anywhere in the world)
+        </li>
+      </ul>
+
+      {{ govukButton({
+        text: "Start now",
+        href: "your_personal_details",
+        isStartButton: true
+      }) }}
+
+
+
+
+    </div>
+  </div>
+
+{% endblock %}
+
+
+{% block footer %}
+
+{{ govukFooter({
+  meta: {
+    html: 'New footer'
+  }
+}) }}
+
+{% endblock %}

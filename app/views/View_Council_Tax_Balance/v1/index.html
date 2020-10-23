@@ -1,0 +1,89 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{% endblock%}
+
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        View the balance on a Council Tax bill
+      </h1>
+
+
+
+      <h2 class="govuk-heading-l">
+        Online
+      </h2>
+
+      <p>
+        Fill in the form online. You will see the balance in a matter of minutes.
+      </p>
+
+
+      <p>
+        <a href="start">View online</a>
+        </p>
+
+      <h2 class="govuk-heading-l">
+        By post / form
+      </h2>
+
+      <p>
+        Download the form, print it out, fill it in and send it the council office.
+      </p>
+
+      <p>
+        This process can take up to 14 days for you to get a response.
+      </p>
+
+      <p>
+        <a href="#">Download the Direct Debit form</a><br >
+        <a href="#">Use the online form</a>
+      </p>
+
+      <h2 class="govuk-heading-l">
+        By telephone
+      </h2>
+
+      <p>
+        How long this process takes depends on call volumes to the council tax team. You could be waiting up to half an hour to speak to someone.
+      </p>
+
+      <p>
+        <a href="#">View contact details</a>
+      </p>
+
+
+    </div>
+  </div>
+
+{% endblock %}
+
+
+{% block footer %}
+
+{{ govukFooter({
+  meta: {
+    html: 'New footer'
+  }
+}) }}
+
+{% endblock %}

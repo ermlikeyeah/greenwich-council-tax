@@ -1,0 +1,62 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+  <a class="govuk-back-link" href="/url/of/previous/page">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">View a council tax balance online</span>
+
+      <form class="post" method="post" action="balance">
+
+
+            {{ govukInput({
+              label: {
+                text: "Postcode of property",
+                classes: "govuk-label--xl",
+                isPageHeading: false
+              },
+              classes: "govuk-input--width-10",
+              id: "postcode",
+              name: "postcode",
+              hint: {
+                text: "Only properties in Greenwich"
+              },
+              spellcheck: true
+            }) }}
+
+
+
+      {{ govukDetails({
+        summaryText: "Where can you find the council tax account number?",
+        text: "If you have a council tax bill for the property, you will find the council tax account number on the front of the bill under the property address."
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
