@@ -25,52 +25,50 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <span class="govuk-caption-l">Set up a Direct Debit</span>
-      <h1 class="govuk-heading-xl">
-        Your address
+      <h1 class="govuk-heading-l">
+        Your home address
       </h1>
 
-      <form class="post" method="post" action="DD_plan">
+      <form class="post" method="post" action="same_address_check">
 
       <p>
-        This is the address your bank account is registered at.
+        You are arranging to pay council tax for the following address:
       </p>
 
-      <h2 class="govuk-heading-m">Postcode</h2>
       <p>
-        SE18 6HQ <a href="your_address">Change</a>
+        123 Main Road<br>
+        Greenwich<br>
+        SE10 1AA
       </p>
 
-{{ govukRadios({
-  idPrefix: "account-address",
-  name: "account-address",
+      {{ govukRadios({
+  classes: "govuk-radios--inline",
+  idPrefix: "same-address",
+  name: "same-address",
   fieldset: {
     legend: {
-      text: "Select an address",
-      isPageHeading: true,
+      text: "Is this the same address you live at?",
       classes: "govuk-fieldset__legend--m"
     }
   },
   items: [
     {
-      value: "The Woolwich Centre, Wellington Street, Woolwich, SE18 6HQ",
-      text: "The Woolwich Centre, Wellington Street, Woolwich, SE18 6HQ"
+      value: "yes",
+      text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No"
     }
   ]
 }) }}
 
-<p>
-  <a href="manual_address_entry">I can't find my address in the list</a>
-<p>
-
-
-      {% from "govuk/components/button/macro.njk" import govukButton %}
 
       {{ govukButton({
         text: "Continue"
       }) }}
 
       </form>
-
     </div>
   </div>
 

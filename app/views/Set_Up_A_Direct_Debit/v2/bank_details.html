@@ -31,6 +31,13 @@
 
       <form class="post" method="post" action="check_info_provided">
 
+      {{ govukInput({
+        label: {
+          text: "Name on the account"
+        },
+        id: "name-on-account",
+        name: "name-on-account"
+      }) }}
 
 
       {{ govukInput({
@@ -60,15 +67,6 @@
 
       {{ govukInput({
         label: {
-          text: "Name of account holder"
-        },
-        id: "name-on-account",
-        name: "name-on-account"
-      }) }}
-
-
-      {{ govukInput({
-        label: {
           text: "Bank name"
         },
         classes: "govuk-input--width-10",
@@ -76,14 +74,49 @@
         name: "bank-name"
       }) }}
 
-      {{ govukInput({
-        label: {
-          text: "Bank branch"
-        },
-        classes: "govuk-input--width-10",
-        id: "bank-branch",
-        name: "bank-branch"
-      }) }}
+
+{% set bankBranch %}
+{{ govukInput({
+  id: "bank-branch",
+  name: "bank-branch",
+  type: "text",
+  spellcheck: false,
+  classes: "govuk-!-width-one-third",
+  label: {
+    text: "Name of the bank branch"
+  }
+}) }}
+{% endset -%}
+
+
+
+{{ govukRadios({
+  idPrefix: "has-branch",
+  name: "has-branch",
+  fieldset: {
+    legend: {
+      text: "Do you know the branch of the bank?",
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: "Hint."
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes",
+      conditional: {
+        html: bankBranch
+      }
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+  ]
+}) }}
+
 
       {{ govukButton({
         text: "Continue"

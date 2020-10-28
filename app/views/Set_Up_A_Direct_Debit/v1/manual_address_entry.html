@@ -32,35 +32,8 @@
       <form class="post" method="post" action="DD_plan">
 
       <p>
-        This is the address your bank account is registered at.
+        Address line 1
       </p>
-
-      <h2 class="govuk-heading-m">Postcode</h2>
-      <p>
-        SE18 6HQ <a href="your_address">Change</a>
-      </p>
-
-{{ govukRadios({
-  idPrefix: "account-address",
-  name: "account-address",
-  fieldset: {
-    legend: {
-      text: "Select an address",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--m"
-    }
-  },
-  items: [
-    {
-      value: "The Woolwich Centre, Wellington Street, Woolwich, SE18 6HQ",
-      text: "The Woolwich Centre, Wellington Street, Woolwich, SE18 6HQ"
-    }
-  ]
-}) }}
-
-<p>
-  <a href="manual_address_entry">I can't find my address in the list</a>
-<p>
 
 
       {% from "govuk/components/button/macro.njk" import govukButton %}

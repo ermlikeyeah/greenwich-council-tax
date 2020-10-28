@@ -36,47 +36,5 @@ router.post('/Set_Up_A_Direct_Debit/v1/submit_info', function (req, res) {
 });
 
 
-router.post('/Set_Up_A_Direct_Debit/v1/council_tax_number_check', function (req, res) {
-
-  if (req.session.data['council-tax-account-number']) {
-
-    if( req.session.data['council-tax-account-number'].length < 8 ) {
-
-      res.redirect('council_tax_number_no_number');
-
-    } else {
-
-      res.redirect('address_check');
-
-    }
-
-  } else  {
-    res.redirect('council_tax_number_no_number');
-  }
-});
-
-router.post('/Set_Up_A_Direct_Debit/v1/same_address_check', function (req, res) {
-
-  if (req.session.data['same-address'] == 'yes') {
-    res.redirect('DD_plan');
-  } else if (req.session.data['same-address'] == 'no') {
-    res.redirect('your_address');
-  } else {
-    res.redirect('same_address_question');
-  }
-
-});
-
-router.post('/Set_Up_A_Direct_Debit/v1/address_check_check', function (req, res) {
-
-  if (req.session.data['correct-property'] == 'yes') {
-    res.redirect('amount_due');
-  } else if (req.session.data['correct-property'] == 'no') {
-    res.redirect('council_tax_number');
-  } else {
-    res.redirect('address_check');
-  }
-
-});
 
 }

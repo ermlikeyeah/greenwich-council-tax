@@ -26,12 +26,10 @@
     <div class="govuk-grid-column-two-thirds">
       <span class="govuk-caption-l">Set up a Direct Debit</span>
       <h1 class="govuk-heading-xl">
-        Confirmation
+        Check the information you provided before XXXXXing
       </h1>
 
-      <p>
-        Please confirm the following details are correct before sending your application.
-      </p>
+      <h2 class="govuk-heading-m">Council tax details</h2>
 
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       <div class="govuk-summary-list__row">
@@ -47,6 +45,26 @@
             </a>
           </dd>
       </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Property address
+        </dt>
+        <dd class="govuk-summary-list__value">
+          123 Main Road
+          Greenwich
+          SE10 1AA
+        </dd>
+          <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="council_tax_number">
+                Change<span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+      </div>
+      </dl>
+
+      <h2 class="govuk-heading-m">Personal details</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Your full name
@@ -68,9 +86,7 @@
           {{ data['emailAddress'] }}
         </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> name</span>
-          </a>
+
           </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -81,11 +97,24 @@
           {{ data['phoneNumber'] }}
         </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> name</span>
-          </a>
+
           </dd>
       </div>
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    Send council tax correspondance by email
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['comms-by-email'] }}
+  </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="communicaton_preferences">
+        Change<span class="govuk-visually-hidden"> name</span>
+    </a>
+    </dd>
+</div>
+
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Your address
@@ -99,6 +128,11 @@
           </a>
           </dd>
       </div>
+    </dl>
+
+    <h2 class="govuk-heading-m">Payment plan</h2>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
         Payment amount and frequency
@@ -120,41 +154,17 @@
         {{ data['payment-date'] }} of every month
       </dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
-            Change<span class="govuk-visually-hidden"> name</span>
-        </a>
+
         </dd>
     </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Sort code
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ data['sort-code'] }}
-        </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> name</span>
-          </a>
-          </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Account number
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ data['bank-account-number'] }}
-        </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> name</span>
-          </a>
-          </dd>
-      </div>
+  </dl>
 
+      <h2 class="govuk-heading-m">Bank details</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Name of account holder
+          Name on the account
         </dt>
         <dd class="govuk-summary-list__value">
           {{ data['name-on-account'] }}
@@ -167,15 +177,35 @@
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
+          Sort code
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['sort-code'] }}
+        </dd>
+          <dd class="govuk-summary-list__actions">
+
+          </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Account number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['bank-account-number'] }}
+        </dd>
+          <dd class="govuk-summary-list__actions">
+
+          </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
           Bank name
         </dt>
         <dd class="govuk-summary-list__value">
           {{ data['bank-name'] }}
         </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> name</span>
-          </a>
+
           </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -190,14 +220,19 @@
           {% endif %}
         </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> name</span>
-          </a>
+
           </dd>
       </div>
     </dl>
 
-    <form class="post" method="post" action="confirmation">
+    <form class="post" method="post" action="submit_info">
+
+    <h2 class="govuk-heading-m">Now send your application</h2>
+
+    <p>
+      By submitting this information you are confirming that, to teh best of your knowledge, the details you are proving are correct.
+    </p>
+
 
     <button class="govuk-button" data-module="govuk-button">Accept and send</button>
 
