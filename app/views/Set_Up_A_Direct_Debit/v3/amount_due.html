@@ -1,0 +1,56 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+  <a class="govuk-back-link" href="/url/of/previous/page">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">Set up a Direct Debit</span>
+      <h1 class="govuk-heading-xl">
+        Council tax amount due
+      </h1>
+
+      <form class="post" method="post" action="your_personal_details">
+
+
+          <div class="govuk-panel govuk-panel--confirmation" style="background: #1d70b8;">
+
+            <div class="govuk-panel__body">
+              For 1 November 2020 to 5 April 2021 you need to pay<br /><strong>&pound;480.00</strong>
+            </div>
+
+          </div>
+
+          <p>
+            This amount is payable over the remaining months of the [year].
+          </p>
+
+
+      {{ govukButton({
+        text: "Set up Direct Debit"
+      }) }}
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

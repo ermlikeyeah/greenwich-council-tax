@@ -1,0 +1,58 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+  <a class="govuk-back-link" href="/url/of/previous/page">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">Set up a Direct Debit</span>
+      <h1 class="govuk-heading-xl">
+        Stop setting up a Direct Debit
+      </h1>
+
+      <form class="post" method="post" action="start">
+
+      <p>
+        You indicated this is not the property you want to set a council tax Direct Debit for.
+      </p>
+
+      <p>
+        Check you have the correct council tax account number and postcode and you are entering them as displayed on a current council tax bill.
+      </p>
+
+      {{ govukButton({
+        text: "Set up Direct Debit"
+      }) }}
+
+      <p>
+        If there is an error <a href="https://www.royalgreenwich.gov.uk/info/200160/contact_us/1997/contact_council_tax">contact the council tax team</a>.
+      </p>
+
+      <p>
+        <a href=""></a>
+      </p>
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
