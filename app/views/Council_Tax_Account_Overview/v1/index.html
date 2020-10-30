@@ -23,33 +23,33 @@
         Your account details
       </h2>
 
-      <dl class="govuk-summary-list govuk-!-margin-bottom" style="margin-bottom:0;">
+      <dl class="govuk-summary-list govuk-!-margin-bottom-3" >
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
+        <dt class="govuk-summary-list__key" style="border-bottom: none;">
           Name
         </dt>
-        <dd class="govuk-summary-list__value">
+        <dd class="govuk-summary-list__value" style="border-bottom: none;">
           Andy Resident
         </dd>
       </div>
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
+        <dt class="govuk-summary-list__key" style="border-bottom: none;">
           Account number
         </dt>
-        <dd class="govuk-summary-list__value">
+        <dd class="govuk-summary-list__value" style="border-bottom: none;">
           12345678
         </dd>
       </div>
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
+        <dt class="govuk-summary-list__key" style="border-bottom: none;">
           Address
         </dt>
-        <dd class="govuk-summary-list__value">
+        <dd class="govuk-summary-list__value" style="border-bottom: none;">
           10 Placecube Stree, London, SE18 6HQ
         </dd>
       </div>
       </dl>
-      <p style="background: grey; padding: 8px; text-align: center">
+      <p style="border-style: solid; border-color: #ED850A; background: #fdf3c1; padding: 8px; text-align: center">
               This property is in Band D
       </p>
 
@@ -63,7 +63,7 @@
       <h3 class="govuk-heading-m">
           Council Tax Bill 2020 to 2021
       </h3>
-      <dl class="govuk-summary-list govuk-!-margin-bottom" style="margin-bottom:0;">
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Total for year 2020 to 2021
@@ -82,22 +82,16 @@
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Total left to pay
+          <span class="govuk-heading-m" style="margin-bottom: 0;">Total left to pay</span>
         </dt>
         <dd class="govuk-summary-list__value">
-          £1,200.00
+          <span class="govuk-heading-m">£1,200.00</span>
         </dd>
       </div>
       </dl>
 
-      <p>
-        Monthly payments for 2020/21
-      </p>
-
-      {% from "govuk/components/table/macro.njk" import govukTable %}
-
 {{ govukTable({
-  caption: "Dates and amounts",
+  caption: "Monthly payments for 2020/21",
   firstCellIsHeader: true,
   head: [
     {
@@ -205,18 +199,35 @@
   href: "your_details"
 }) }}
 
-<span>
-<a href="">Other ways to pay</a>
-</span>
+<p style="margin-top: -16px;">
+<a href="#">Other ways to pay</a>
+</p>
 
 
       <h3 class="govuk-heading-s">
-          Council Tax Bill 2020 to 2021
+          Download your annual bills
       </h3>
 
       <p>
-        PDF
+        <a href="#">Council Tax Bill 2020 to 2021</a><br />
+        <span class="govuk-body-s">PDF, 140KB</span>
       </p>
+
+
+      <hr>
+
+      <h4 class="govuk-heading-s">
+          Useful links
+      </h4>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="">Council Tax discounts</a></li>
+        <li><a href="">Council Tax exemptions</a></li>
+        <li><a href="">Council Tax arrears</a></li>
+        <li><a href="">Council Tax budget spend</a></li>
+        <li><a href="">Contact the Council Tax team</a></li>
+
+      </ul>
 
     </div>
   </div>
