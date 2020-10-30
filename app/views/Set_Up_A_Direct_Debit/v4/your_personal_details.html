@@ -26,63 +26,51 @@
     <div class="govuk-grid-column-two-thirds">
       <span class="govuk-caption-l">Set up a Direct Debit</span>
       <h1 class="govuk-heading-xl">
-        Bank account details
+        Your personal details
       </h1>
 
-      <form class="post" method="post" action="check_info_provided">
+      <p>
+        We need these if we need to contact you about your Direct Debit instruction. We won't use your details for any other purpose.
+      </p>
+
+      <form class="post" method="post" action="check_for_email_address">
 
       {{ govukInput({
         label: {
-          text: "Name on the account"
-        },
-        id: "name-on-account",
-        name: "name-on-account"
-      }) }}
-
-
-      {{ govukInput({
-        label: {
-          text: "Sort code"
-        },
-        hint: {
-          text: "Must be 6 digits long"
+          text: "Your full name"
         },
         classes: "govuk-input--width-10",
-        id: "sort-code",
-        name: "sort-code"
+        id: "full-name",
+        name: "full-name"
       }) }}
 
       {{ govukInput({
         label: {
-          text: "Account number"
-        },
-        hint: {
-          text: "Must be between 6 and 8 digits long"
+          text: "Your email address"
         },
         classes: "govuk-input--width-10",
-        id: "bank-account-number",
-        name: "bank-account-number"
+        id: "email-address",
+        name: "emailAddress"
       }) }}
-
 
       {{ govukInput({
         label: {
-          text: "Bank name"
+          text: "Telephone number"
         },
         classes: "govuk-input--width-10",
-        id: "bank-name",
-        name: "bank-name"
+        id: "telephone-number",
+        name: "phoneNumber"
       }) }}
 
 
-      <p>Do we need branch?</p>
-
+      {% from "govuk/components/button/macro.njk" import govukButton %}
 
       {{ govukButton({
         text: "Continue"
       }) }}
 
       </form>
+
     </div>
   </div>
 

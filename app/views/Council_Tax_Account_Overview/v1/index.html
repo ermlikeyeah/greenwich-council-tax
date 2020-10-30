@@ -1,0 +1,162 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{% endblock%}
+
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Your Council Tax summary
+      </h1>
+
+
+      <h2 class="govuk-heading-l">
+        Your account details
+      </h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom" style="margin-bottom:0;">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Andy Resident
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Account number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          12345678
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Address
+        </dt>
+        <dd class="govuk-summary-list__value">
+          10 Placecube Stree, London, SE18 6HQ
+        </dd>
+      </div>
+      </dl>
+      <p style="background: grey; padding: 8px; text-align: center">
+              This property is in Band D
+      </p>
+
+
+
+      <h2 class="govuk-heading-l">
+          Your summary
+      </h2>
+
+
+      <h3 class="govuk-heading-m">
+          Council Tax Bill 2020 to 2021
+      </h3>
+      <dl class="govuk-summary-list govuk-!-margin-bottom" style="margin-bottom:0;">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Total for year 2020 to 2021
+        </dt>
+        <dd class="govuk-summary-list__value">
+          £1,200.00
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Amount already paid
+        </dt>
+        <dd class="govuk-summary-list__value">
+          £0.00
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Total left to pay
+        </dt>
+        <dd class="govuk-summary-list__value">
+          £1,200.00
+        </dd>
+      </div>
+      </dl>
+
+      <p>
+        Monthly payments for 2020/21
+      </p>
+
+      {% from "govuk/components/table/macro.njk" import govukTable %}
+
+{{ govukTable({
+  caption: "Dates and amounts",
+  firstCellIsHeader: true,
+  head: [
+    {
+      text: "Due date"
+    },
+    {
+      text: "Amount"
+    }
+  ],
+  rows: [
+    [
+      {
+        text: "First 6 weeks"
+      },
+      {
+        text: "£109.80 per week"
+      }
+    ],
+    [
+      {
+        text: "Next 33 weeks"
+      },
+      {
+        text: "£109.80 per week"
+      }
+    ],
+    [
+      {
+        text: "Total estimated pay"
+      },
+      {
+        text: "£4,282.20"
+      }
+    ]
+  ]
+}) }}
+
+
+    </div>
+  </div>
+
+{% endblock %}
+
+
+{% block footer %}
+
+{{ govukFooter({
+  meta: {
+    html: 'New footer'
+  }
+}) }}
+
+{% endblock %}

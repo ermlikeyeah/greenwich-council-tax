@@ -1,0 +1,97 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{% endblock%}
+
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Set up a Direct Debit
+      </h1>
+
+      <h2 class="govuk-heading-l">
+        The easiest way to pay
+      </h2>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          It saves you time
+        </li>
+        <li>
+          It gives you peace of mind that your payment will be taken on time
+        </li>
+        <li>
+          You spread the payments out over the year
+        </li>
+        <li>
+          The payments can go out on any day of the month (apart from the 31st)
+        </li>
+      </ul>
+
+      <h2 class="govuk-heading-l">
+        Set up a council tax Direct Debit online
+      </h2>
+
+      <p>
+        Fill in the form online.
+      </p>
+
+      <p>
+        This process can take up to 7 days to set up.
+      </p>
+
+      <p>
+        <a href="start">Apply online</a>
+      </p>
+
+
+      <h2 class="govuk-heading-l">
+        Set up a council tax Direct Debit by post
+      </h2>
+
+      <p>
+        Download the form, print it out, fill it in and send it the council office.
+      </p>
+
+      <p>
+        This process can take up to 14 days to set up.
+      </p>
+
+      <p>
+        <a href="#">Download the Direct Debit form</a>
+      </p>
+
+
+    </div>
+  </div>
+
+{% endblock %}
+
+
+{% block footer %}
+
+{{ govukFooter({
+  meta: {
+    html: 'New footer'
+  }
+}) }}
+
+{% endblock %}

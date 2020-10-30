@@ -8,6 +8,7 @@ const router = express.Router()
 require('./views/Set_Up_A_Direct_Debit/v1/routes-dd')(router);
 require('./views/Set_Up_A_Direct_Debit/v2/routes-dd')(router);
 require('./views/Set_Up_A_Direct_Debit/v3/routes-dd')(router);
+require('./views/Set_Up_A_Direct_Debit/v4/routes-dd')(router);
 
 require('./views/Register_To_Use_Online/v1/routes-register')(router);
 
