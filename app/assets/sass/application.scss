@@ -1,3 +1,6 @@
+// Override the govuk-frontend font stack
+$govuk-font-family: "Lato", "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+
 // global styles for <a> and <p> tags
 $govuk-global-styles: true;
 
@@ -18,3 +21,19 @@ $govuk-assets-path: '/govuk/assets/';
 @import "components/cookie-banner";
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+
+.govuk-header {
+  background-color: #4b5559;
+}
+
+
+
+.govuk-header__logotype-text {
+  color: white;
+}
+
+
+.govuk-header__container {
+  margin-bottom: 0;
+  border-bottom: 0;
+}

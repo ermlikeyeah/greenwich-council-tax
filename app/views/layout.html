@@ -42,14 +42,33 @@
   {# Set serviceName in config.js. #}
   {{ govukHeader({
     homepageUrl: "/",
-    serviceName: serviceName,
+    serviceName: "Council Tax Online",
     serviceUrl: "/",
-    containerClasses: "govuk-width-container"
+    containerClasses: "govuk-width-container",
+    navigation: [
+      {
+        href: "",
+        text: "",
+        active: true
+      }
+    ]
   }) }}
+
 {% endblock %}
 
 
 {% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing") %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a service we are designing – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{% endblock%}
 
 {% if useAutoStoreData %}
   {% block footer %}

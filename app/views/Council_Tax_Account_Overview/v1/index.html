@@ -5,16 +5,7 @@
   GOV.UK Prototype Kit
 {% endblock %}
 
-{% block beforeContent %}
 
-{{ govukPhaseBanner({
-  tag: {
-    text: "alpha"
-  },
-  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
-}) }}
-
-{% endblock%}
 
 
 {% block content %}
@@ -119,31 +110,113 @@
   rows: [
     [
       {
-        text: "First 6 weeks"
+        text: "15 Apr 2020"
       },
       {
-        text: "£109.80 per week"
+        text: "£120.00"
       }
     ],
     [
       {
-        text: "Next 33 weeks"
+        text: "15 May 2020"
       },
       {
-        text: "£109.80 per week"
+        text: "£120.00"
       }
     ],
     [
       {
-        text: "Total estimated pay"
+        text: "15 Jun 2020"
       },
       {
-        text: "£4,282.20"
+        text: "£120.00"
+      }
+    ],
+    [
+      {
+        text: "15 Jul 2020"
+      },
+      {
+        text: "£120.00"
+      }
+    ],
+    [
+      {
+        text: "15 Aug 2020"
+      },
+      {
+        text: "£120.00"
+      }
+    ],
+    [
+      {
+        text: "15 Sep 2020"
+      },
+      {
+        text: "£120.00"
+      }
+    ],
+    [
+      {
+        text: "15 Oct 2020"
+      },
+      {
+        text: "£120.00"
+      }
+    ],
+    [
+      {
+        text: "15 Nov 2020"
+      },
+      {
+        text: "£120.00"
+      }
+    ],
+    [
+      {
+        text: "15 Dec 2020"
+      },
+      {
+        text: "£120.00"
+      }
+    ],
+    [
+      {
+        text: "15 Jan 2021"
+      },
+      {
+        text: "£120.00"
+      }
+    ],
+    [
+      {
+        text: "Total for year 2020/2021"
+      },
+      {
+        text: "£1,200.00"
       }
     ]
+
   ]
 }) }}
 
+{{ govukButton({
+  text: "Set up a Direct Debit",
+  href: "your_details"
+}) }}
+
+<span>
+<a href="">Other ways to pay</a>
+</span>
+
+
+      <h3 class="govuk-heading-s">
+          Council Tax Bill 2020 to 2021
+      </h3>
+
+      <p>
+        PDF
+      </p>
 
     </div>
   </div>
