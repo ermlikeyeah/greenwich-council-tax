@@ -5,13 +5,6 @@
   GOV.UK Prototype Kit
 {% endblock %}
 
-{% block beforeContent %}
-
-
-
-
-  <a class="govuk-back-link" href="/url/of/previous/page">Back</a>
-{% endblock %}
 
 {% block content %}
 
@@ -58,6 +51,11 @@
   ]
 }) }}
 
+
+{{ govukDetails({
+  summaryText: "Why are we asking this?",
+  text: "We need your home address to set up your Direct Debit."
+}) }}
 
       {{ govukButton({
         text: "Continue"

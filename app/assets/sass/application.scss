@@ -22,6 +22,14 @@ $govuk-assets-path: '/govuk/assets/';
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
+// Set Greenwich colours
+
+// $greenwich-green: #3A913F;
+// $greenwich-green-rollover: #3A913F;
+//$greenwich-green: govuk-colour("green");
+$greenwich-red: #C1002B;
+// $greenwich-red: E4002B;
+
 .govuk-header {
   background-color: #4b5559;
 }
@@ -38,20 +46,45 @@ $govuk-assets-path: '/govuk/assets/';
   border-bottom: 0;
 }
 
-.govuk-button {
-  background-color: #c1002b;
-  box-shadow: 0 2px 0 #87001E;
+//
+// Buttons
+//
+
+//.govuk-button {
+// Change the gov.uk green to Greenwich green
+//  background-color: $greenwich-green;
+// box-shadow: 0 2px 0 #87001E;
+//}
+
+//.govuk-button:hover {
+//  background-color: $greenwich-green-rollover;
+// box-shadow: 0 2px 0 #87001E;
+//}
+
+//
+// Errors
+//
+
+.govuk-error-message {
+  color: $greenwich-red;
+
 }
 
-.govuk-button:hover {
-  background-color: #AE0027;
-  box-shadow: 0 2px 0 #87001E;
+.govuk-error-summary__list a:link {
+  color: $greenwich-red;
+}
+
+.govuk-input--error {
+  border: 2px solid $greenwich-red;
+}
+
+.govuk-form-group--error {
+
+  border-left: 5px solid $greenwich-red;
 }
 
 
 .DUMP {
   background-color: #00703c;
 box-shadow: 0 2px 0 #002d18;
-
-
 }
