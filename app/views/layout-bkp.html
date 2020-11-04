@@ -40,21 +40,20 @@
 {% block header %}
   {% include "includes/cookie-banner.html" %}
   {# Set serviceName in config.js. #}
-  <header class="govuk-header " role="banner" data-module="govuk-header">
-    <div class="govuk-header__container govuk-width-container">
-      <div class="govuk-header__logo">
-        <a href="/" class="govuk-header__link govuk-header__link--homepage">
-          <span class="govuk-header__logotype">
-            <span class="govuk-header__logotype-text">
-              Royal Borough of Greenwich {{ serviceName }}
-            </span>
-          </span>
-        </a>
-      </div>
-    </div>
-  </header>
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: "Council Tax Online",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container",
+    navigation: [
+      {
+        href: "",
+        text: "",
+        active: true
+      }
+    ]
+  }) }}
 
-  {# Space for key details bar #}
 {% endblock %}
 
 
