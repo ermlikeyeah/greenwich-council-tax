@@ -1,0 +1,217 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+
+
+{% endblock%}
+
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        How to pay your Council Tax
+      </h1>
+
+      <h2 class="govuk-heading-l">
+        By Direct Debit
+      </h2>
+
+      <p>
+        Most people pay by Direct Debit. Using Direct Debit makes sure your Council Tax is always paid on time, you can spread the cost over the whole year and you can choose which day of the month to pay.
+      </p>
+
+      <p>
+        Payments are taken automatically from your bank account, so you don't have to worry about remembering to pay your bill. You are protected by a comprehensive guarantee which means you get a full and immediate refund from your bank if an error is made in the payment.
+      </p>
+
+      <h3 class="govuk-heading-m">
+        Why pay by Direct Debit?
+      </h3>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          It saves you time
+        </li>
+        <li>
+          It gives you peace of mind that your payment will be taken on time
+        </li>
+        <li>
+          You spread the payments out over the year
+        </li>
+        <li>
+          The payments can go out on any day of the month (apart from the 31st)
+        </li>
+      </ul>
+
+      <h3 class="govuk-heading-m">
+        Setting up a Direct Debit
+      </h3>
+
+      <p>
+        You can set up a Direct Debit by 3 methods:
+      </p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Filling in a online form</li>
+          <li>Downloading a form, filling it in and returning it to the council's council tax office</li>
+          <li>Contacting the council's council tax team by telephone</li>
+        </ul>
+
+
+      <p>
+        <a href="DD-options-info-page">Set up paying your Counil Tax by Direct Debit</a>
+      </p>
+
+
+      <h2 class="govuk-heading-l">
+        Other ways to pay
+      </h2>
+
+      <p>
+      There are three other ways to pay your bill:
+      </p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>In one payment</li>
+        <li>In 10 monthly instalments. You are automatically put on 10 month instalments</li>
+        <li>In 12 monthly instalments. You have to apply seperately to pay in 12 month instalments.</li>
+      </ul>
+
+      <p>
+        You need the account reference from your bill to set up a payment.
+      </p>
+
+      <h3 class="govuk-heading-m">
+        Pay online
+      </h3>
+
+      <p>
+        <a href="https://www.civicaepay.co.uk/greenwich/webpay_public/webpay/default.aspx?fund=17">Make a payment online</a> in one payment or ten monthly instalments.
+      </p>
+
+      <h3 class="govuk-heading-m">
+        Pay by telephone
+      </h3>
+
+      <p>
+        Call 0300 332 0202.
+      </p>
+
+      {{ govukDetails({
+        summaryText: "Call charges",
+        text: "This is an 0300 number. Phone companies have to include calls to 0300 numbers in any deals, packages, or bundles that also include calls to local landline numbers. However, outside these deals, calls to an 0300 number from a mobile can cost from 3p per minute to 40p per minute. Check with your service provider."
+      }) }}
+
+
+      <h3 class="govuk-heading-m">
+        Pay by internet banking
+      </h3>
+
+      <p>
+        You can pay your Council Tax on your bank's website using the following account details:
+      </p>
+
+      <p>
+        <b>Account name</b><br>
+        Royal Borough of Greenwich<br>
+        <br>
+        <b>Account number</b><br>
+        11464763<br>
+        <br>
+        <b>Sort code</b><br>
+        60-24-26<br>
+        <br>
+        <b>Bank name</b><br>
+        National Westminster Bank PLC
+      </p>
+
+      <p>
+        You'll also need your account reference - you can find this on your bill.
+      </p>
+
+      <h3 class="govuk-heading-m">
+        Pay in person
+      </h3>
+
+      <p>
+        You can use a payment card at any payment outlet in Royal Greenwich. Payment outlets are:
+      </p>
+
+      <h4 class="govuk-heading-s">
+        Post Office counters
+      </h4>
+
+      <p>
+        You can find your nearest branch on the <a href="https://www.postoffice.co.uk/branchfinder1">Post Office website</a>.
+      </p>
+
+      <h4 class="govuk-heading-s">
+          PayPoint outlets
+      </h4>
+
+        <p>
+          You can find your nearest outlet on the Allpay website
+        </p>
+
+        <p>
+          You can pay in cash, debit card or by cheque (payable to Post Office Counters Ltd) at post office counters and in cash at PayPoint outlets. Call 020 8921 4147 to get a payment card.
+        </p>
+
+
+
+      <h4 class="govuk-heading-m">
+        If you live abroad
+      </h4>
+
+      <p>
+        If you live abroad you can make international payments from your bank account using the International Bank Account Number (IBAN) number below:
+      </p>
+
+      <p><b>Account name</b><br>
+        Royal Borough of Greenwich<br>
+        <br>
+        <b>Account number</b><br>
+        11464763<br>
+        <br>
+        <b>Sort code</b><br>
+        60-24-26<br>
+        <br>
+        <b>Bank name</b><br>
+        National Westminster Bank PLC<br>
+Woolwich Branch,<br>
+1-7 Powis Street,<br>
+Woolwich,<br>
+London SE18 6LE<br>
+<br>
+<b>IBAN number</b><br>
+GB89NWBK60242611464763
+  </p>
+    <p>
+      Please quote your Council Tax account number as 'reference' - you can find this on your bill.
+    </p>
+
+
+    </div>
+  </div>
+
+{% endblock %}
+
+
+{% block footer %}
+
+{{ govukFooter({
+  meta: {
+    html: 'New footer'
+  }
+}) }}
+
+{% endblock %}
