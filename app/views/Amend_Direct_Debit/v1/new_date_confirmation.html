@@ -5,12 +5,7 @@
   GOV.UK Prototype Kit
 {% endblock %}
 
-{% block beforeContent %}
 
-
-
-
-{% endblock %}
 
 {% block content %}
 
@@ -20,18 +15,23 @@
     <div class="govuk-grid-column-two-thirds">
 
           {{ govukPanel({
-            titleText: "Direct debit application has been received and is being processed"
+            titleText: "New Direct Debit date has been submitted"
           }) }}
 
-          <p class="govuk-body">We have sent you a confirmation email.</p>
+          <p class="govuk-body">We have sent you an email confirming your request.</p>
 
           <h2 class="govuk-heading-m">What happens next</h2>
 
           <p class="govuk-body">
-            We will process your application. This can take up to 7 days. When it is set up you will receive confirmation by post.
+            We will process your request to change your Direct Debit payment date. This can take up to 7 days. When it is set up you will receive confirmation by post.
           </p>
+
           <p class="govuk-body">
             If we have any questions we will contact you directly.
+          </p>
+
+          <p>
+            <a href="#">Return to account overview</a>
           </p>
 
           <p class="govuk-body">

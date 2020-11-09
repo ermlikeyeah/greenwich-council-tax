@@ -1,0 +1,52 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">Amend Direct Debit</span>
+
+      <form class="post" method="post" action="new_date_confirm">
+
+
+        {{ govukInput({
+          label: {
+            text: "New payment date",
+            classes: "govuk-label--xl",
+            isPageHeading: true
+          },
+          classes: "govuk-input--width-4",
+          hint: {
+            text: "The day of the month you would like the payment to be taken. You can select any date except the 31st."
+          },
+          id: "payment-date",
+          name: "payment-date"
+        }) }}
+
+
+
+{{ govukInsetText({
+  text: "If the date you provide is after the 10th of this month, the next Direct Debit payment will be taken next month instead of this month. [will this also force a recalc?]"
+}) }}
+
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
