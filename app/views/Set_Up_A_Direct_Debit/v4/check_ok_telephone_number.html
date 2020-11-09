@@ -1,0 +1,58 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">Set up a Direct Debit</span>
+      <h1 class="govuk-heading-xl">
+        Contacting you by telephone
+      </h1>
+
+      <form class="post" method="post" action="existing_phone_number_answer">
+
+
+        <p>
+          If we have any questions setting up this Direct Debit we are likely to contact you by telephone.
+        </p>
+
+
+        {{ govukRadios({
+          idPrefix: "queries-by-phone",
+          name: "queries-by-phone",
+          fieldset: {
+            legend: {
+              text: "Which telephone number do you want to use?",
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "0797 693 7205"
+            },
+            {
+              value: "no",
+              text: "A new telephone number"
+            }
+          ]
+        }) }}
+
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

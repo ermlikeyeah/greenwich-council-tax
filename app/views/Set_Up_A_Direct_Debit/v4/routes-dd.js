@@ -96,6 +96,20 @@ router.post('/Set_Up_A_Direct_Debit/v4/DD_date_check', function (req, res) {
 
 });
 
+
+router.post('/Set_Up_A_Direct_Debit/v4/existing_phone_number_answer', function (req, res) {
+
+  if (req.session.data['queries-by-phone'] == 'yes') {
+    res.redirect('communication_preferences');
+  } else if (req.session.data['queries-by-phone'] == 'no') {
+    res.redirect('provide_telephone_number');
+  } else {
+    res.redirect('check_ok_telephone_number');
+  }
+
+});
+
+
 router.post('/Set_Up_A_Direct_Debit/v4/address_check_check', function (req, res) {
 
   if (req.session.data['correct-property'] == 'yes') {
