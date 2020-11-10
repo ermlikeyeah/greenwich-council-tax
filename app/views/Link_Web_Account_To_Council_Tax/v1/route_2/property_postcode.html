@@ -1,0 +1,50 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">Connect to a council tax account</span>
+
+      <form class="post" method="post" action="name">
+
+
+            {{ govukInput({
+              label: {
+                text: "Postcode of property",
+                classes: "govuk-label--xl",
+                isPageHeading: true
+              },
+              classes: "govuk-input--width-10",
+              id: "property-postcode",
+              name: "property-postcode",
+              hint: {
+                text: "Must be a Greenwich postcode [HINT: SE10 1AA]"
+              }
+            }) }}
+
+
+
+      {{ govukDetails({
+        summaryText: "Where can you find the postcode of the property?",
+        text: "If you have a council tax bill for the property, you will find the property postcode on the front of the bill in the property address."
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

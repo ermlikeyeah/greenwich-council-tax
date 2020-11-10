@@ -1,0 +1,84 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">Connect to a council tax account</span>
+
+      <form class="post" method="post" action="confirmation">
+
+
+
+        <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="date-hint">
+
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+            <h1 class="govuk-fieldset__heading">
+              When was you liable for the property&#39;s council tax from?
+            </h1>
+
+          </legend>
+
+
+          <div id="date-hint" class="govuk-hint">
+            For example, 3 2007
+          </div>
+
+
+          <div class="govuk-date-input" id="date">
+
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="date-month">
+                  Month
+                </label>
+
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-month" name="date-month" type="text" pattern="[0-9]*" inputmode="numeric">
+              </div>
+            </div>
+
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="date-year">
+                  Year
+                </label>
+
+              <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="date-year" name="date-year" type="text" pattern="[0-9]*" inputmode="numeric">
+              </div>
+            </div>
+
+          </div>
+
+
+        </fieldset>
+
+
+        </div>
+
+
+
+
+
+
+
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

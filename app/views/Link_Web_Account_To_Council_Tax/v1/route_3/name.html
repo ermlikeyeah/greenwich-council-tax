@@ -1,0 +1,61 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">Connect to a council tax account</span>
+
+      <form class="post" method="post" action="question">
+
+        <h1 class="govuk-heading-xl">
+          Your name
+        </h1>
+
+
+            {{ govukInput({
+              label: {
+                text: "First name",
+                classes: "govuk-label--m"
+              },
+              classes: "govuk-input--width-20",
+              id: "first-name",
+              name: "first-name",
+              hint: {
+                text: "Must be your name as displayed on a council tax bill"
+              }
+            }) }}
+
+
+            {{ govukInput({
+              label: {
+                text: "Last name",
+                classes: "govuk-label--m"
+              },
+              classes: "govuk-input--width-20",
+              id: "last-name",
+              name: "last-name",
+              hint: {
+                text: "Must be your name as displayed on a council tax bill"
+              }
+            }) }}
+
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

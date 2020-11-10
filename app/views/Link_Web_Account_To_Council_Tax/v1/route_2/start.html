@@ -1,0 +1,67 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Connect to a council tax account
+      </h1>
+
+      <p>
+        something something access council tax online
+      </p>
+
+      <p>
+        Process should take several minutes
+      </p>
+
+      <h2 class="govuk-heading-m">
+        Before you start
+      </h2>
+
+
+      <p>
+        You will need
+      </p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          The [most recent] council tax bill for the property
+        </li>
+      </ul>
+
+      {{ govukButton({
+        text: "Start now",
+        href: "council_tax_number",
+        isStartButton: true
+      }) }}
+
+
+
+
+    </div>
+  </div>
+
+{% endblock %}
+
+
+{% block footer %}
+
+{{ govukFooter({
+  meta: {
+    html: 'New footer'
+  }
+}) }}
+
+{% endblock %}
