@@ -30,7 +30,6 @@
               classes: "govuk-input--width-20",
               id: "first-name",
               name: "first-name",
-              value: first-name,
               hint: {
                 text: "Must be your name as displayed on a council tax bill"
               }
@@ -45,11 +44,13 @@
               classes: "govuk-input--width-20",
               id: "last-name",
               name: "last-name",
-              value: "Dave",
               hint: {
                 text: "Must be your name as displayed on a council tax bill"
               }
             }) }}
+
+
+                        <input name="counter" id="counter" value="0" type="hidden">
 
 
       {{ govukButton({
