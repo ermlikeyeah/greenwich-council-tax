@@ -18,6 +18,10 @@
       </h1>
 
       <p>
+        By canceling this Direct Debit and you are remaining in the property you will need to pay the council tax for the property another way.
+      </p>
+
+      <p>
         [what if the DD is due to go out tomorrow or the next day? can it be cancelled that quickly?]
       </p>
 
@@ -25,31 +29,29 @@
         If you wish to pay the Direct Debit from a different bank account you can <a href="">change the bank account details</a>.
       </p>
 
+      <p>
+        If you are cancelling your Direct Debit because you are moving to another property within the borough then ...
+      </p>
 
       <form class="post" method="post" action="DD_cancelled_confirmation">
 
         {{ govukRadios({
-          idPrefix: "reason-cancel",
-          name: "reason-cancel",
+          idPrefix: "cancel-DD",
+          name: "cancel-DD",
           fieldset: {
             legend: {
-              text: "Why do you want to cancel this Direct Debit?",
+              text: "Are you sure you want to canel this Direct Debit?",
               classes: "govuk-fieldset__legend--m"
             }
           },
           items: [
             {
-              value: "moving-within",
-              text: "Moving home, within the borough"
+              value: "Yes",
+              text: "Yes, I want to cancel this Direct Debit"
             },
             {
-              value: "moving-outside",
-              text: "Moving home, to outside the borough"
-            },
-
-            {
-              value: "monthly",
-              text: "Want to pay monthly manually [language]"
+              value: "No",
+              text: "No, I do not want to cancel this Direct Debit"
             }
           ]
         }) }}
