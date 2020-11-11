@@ -13,6 +13,17 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+
+      {{ govukErrorSummary({
+        "titleText": "There is a problem",
+        "errorList": [
+          {
+            "text": "Enter a postcode",
+            "href": "#property-postcode"
+          }
+        ]
+      }) }}
+
       <span class="govuk-caption-l">Connect to a council tax account</span>
 
       <form class="post" method="post" action="postcode_check">
@@ -29,6 +40,9 @@
               name: "property-postcode",
               hint: {
                 text: "Must be a Greenwich postcode"
+              },
+              errorMessage: {
+                text: "Enter a postcode"
               }
             }) }}
 

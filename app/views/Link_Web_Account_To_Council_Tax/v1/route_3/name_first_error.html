@@ -13,6 +13,17 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+
+      {{ govukErrorSummary({
+        "titleText": "There is a problem",
+        "errorList": [
+          {
+            "text": "Enter a first name",
+            "href": "#first-name"
+          }
+        ]
+      }) }}
+
       <span class="govuk-caption-l">Connect to a council tax account</span>
 
       <form class="post" method="post" action="name_check">
@@ -20,6 +31,10 @@
         <h1 class="govuk-heading-xl">
           Your name
         </h1>
+
+        <p>
+          This must be your name as displayed on a council tax bill.
+        </p>
 
 
             {{ govukInput({
@@ -31,8 +46,8 @@
               id: "first-name",
               name: "first-name",
               value: first-name,
-              hint: {
-                text: "Must be your name as displayed on a council tax bill"
+              errorMessage: {
+                text: "Enter a first name"
               }
             }) }}
 
@@ -45,10 +60,7 @@
               classes: "govuk-input--width-20",
               id: "last-name",
               name: "last-name",
-              value: "Dave",
-              hint: {
-                text: "Must be your name as displayed on a council tax bill"
-              }
+              value: last-name
             }) }}
 
 
