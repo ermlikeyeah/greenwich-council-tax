@@ -93,6 +93,40 @@ if (counter > 3) {
 
 
 //
+// Question check
+//
+
+router.post('/Link_Web_Account_To_Council_Tax/v1/route_3/question_check', function (req, res) {
+
+    var counter = req.session.data['counter'];
+    counter = Number(counter)
+    counter = counter + 1;
+    req.session.data['counter'] = counter;
+
+if (counter > 3) {
+
+    res.redirect('fail');
+
+} else {
+
+  if (req.session.data['date-month'] && req.session.data['date-year']) {
+
+      res.redirect('confirmation');
+
+
+    } else {
+
+      res.redirect('question_error');
+
+    }
+
+  }
+
+
+
+});
+
+//
 // End bracket - do not delete!
 //
 
