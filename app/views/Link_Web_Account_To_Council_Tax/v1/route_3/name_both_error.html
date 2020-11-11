@@ -36,6 +36,15 @@
           Your name
         </h1>
 
+        <div class="govuk-warning-text">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+            <span class="govuk-warning-text__assistive">Warning</span>
+            You have 3 attempts to do this. You are currently on attempt {{ data['counter'] }}.
+          </strong>
+        </div>
+
+
         <p>
           This must be your name as displayed on a council tax bill.
         </p>
@@ -69,6 +78,8 @@
                 text: "Enter a last name"
               }
             }) }}
+
+                        <input name="counter" value="{{ data['counter'] }}" type="hidden">
 
 
       {{ govukButton({

@@ -52,8 +52,15 @@ router.post('/Link_Web_Account_To_Council_Tax/v1/route_3/postcode_check', functi
 router.post('/Link_Web_Account_To_Council_Tax/v1/route_3/name_check', function (req, res) {
 
     var counter = req.session.data['counter'];
+    counter = Number(counter)
     counter = counter + 1;
     req.session.data['counter'] = counter;
+
+if (counter > 3) {
+
+    res.redirect('fail');
+
+} else {
 
   if (req.session.data['first-name'] && req.session.data['last-name']) {
 
@@ -77,6 +84,10 @@ router.post('/Link_Web_Account_To_Council_Tax/v1/route_3/name_check', function (
       res.redirect('name_error');
 
     }
+
+  }
+
+
 
 });
 
