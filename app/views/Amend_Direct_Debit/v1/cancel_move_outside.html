@@ -1,0 +1,46 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">Amend Direct Debit</span>
+      <h1 class="govuk-heading-xl">
+        Moving outside the Royal Borough of Greenwich
+      </h1>
+
+      <p>
+        If you are moving to a property outside of the borough, to cancel your Direct Debit we need the following information to help us close your account.
+      </p>
+
+      {{ govukDateInput({
+        id: "leaving-date",
+        namePrefix: "leaving-date",
+        fieldset: {
+          legend: {
+            text: "What date are you leaving the property?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: "For example, 27 3 2007"
+        }
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,77 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">Amend Direct Debit</span>
+      <h1 class="govuk-heading-xl">
+        Switch to paying monthly manually [langauge]
+      </h1>
+
+      <p>
+        If you want to switch to making your payments manaully you will need to ensure the council tax is paid for the remaining months of this council tax year.
+      </p>
+
+      <p>
+        If you are switching because you are unable to <a href="">contact the council tax team</a> so we can make an arrangement. [We are here to help you.
+      </p>
+
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key" style="border-bottom: none; width: 50%;">
+            Due date
+          </dt>
+          <dd class="govuk-summary-list__key" style="border-bottom: none;">
+            Amount
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row" >
+          <dt class="govuk-summary-list__key" style="border-bottom: none;">
+            21 December 2020
+          </dt>
+          <dd class="govuk-summary-list__value" style="border-bottom: none;">
+            £160.00
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            21 January 2021
+          </dt>
+          <dd class="govuk-summary-list__value">
+            £160.00
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row" style="background: #b1b4b6;">
+          <dt class="govuk-summary-list__key" style=" padding-left: 8px;">
+            Total
+          </dt>
+          <dd class="govuk-summary-list__value">
+            £320.00
+          </dd>
+        </div>
+      </dl>
+
+      <p>
+        Do you wish to contine? y/n
+      </p>
+
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}
