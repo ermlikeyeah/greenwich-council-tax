@@ -1,0 +1,68 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">Set up a Direct Debit</span>
+
+      <h1 class="govuk-heading-xl">
+        Council tax details
+      </h1>
+
+      <p>
+        Enter the council tax account number and postcode for the property as displayed on a recent council tax bill.
+      </p>
+
+      <form class="post" method="post" action="council_tax_number_check">
+
+
+            {{ govukInput({
+              label: {
+                text: "Council tax account number",
+                classes: "govuk-label--m"
+              },
+              classes: "govuk-input--width-10",
+              id: "council-tax-account-number",
+              name: "council-tax-account-number",
+              hint: {
+                text: "Must be 8 digits long"
+              },
+              inputmode: "numeric",
+              pattern: "[0-9]*",
+              spellcheck: true
+            }) }}
+
+
+      {{ govukInput({
+        label: {
+          text: "Postcode of property",
+          classes: "govuk-label--m",
+          isPageHeading: true
+        },
+        classes: "govuk-input--width-10",
+        id: "property-postcode",
+        name: "property-postcode",
+        hint: {
+          text: "Must be a Greenwich postcode [HINT: SE10 1AA]"
+        }
+      }) }}
+
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

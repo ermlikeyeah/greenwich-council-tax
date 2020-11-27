@@ -1,0 +1,117 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Set up a council tax Direct Debit online
+      </h1>
+
+      <h2 class="govuk-heading-m">
+        Before you start
+      </h2>
+
+      <p>
+        You will need
+      </p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          Your council tax account number, found on any Royal Borough of Greenwich council tax bill.
+        </li>
+        <li>
+          Your bank account details. It must be a UK bank account.
+        </li>
+        <li>
+          To know whether you want to pay your council tax for a year in one amount or a number of installments.
+        </li>
+        <li>
+          An idea of a day of the month you want your Direct Debit to leave your bank account.
+        </li>
+      </ul>
+
+
+
+      {{ govukButton({
+        text: "Start now",
+        href: "confirm_property",
+        isStartButton: true
+      }) }}
+
+
+            <p class="govuk-body govuk-!-font-weight-bold">
+              Royal Borough of Greenwich council tax Direct Debits are covered by the Direct Debit Guarantee.
+            </p>
+
+
+                    <details class="govuk-details" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    What is the Direct Debit Guarantee?
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+
+                  <img src="/public/images/dd-logo.jpg" alt="Direct Debit logo" style="height:20% ; width: 20%; margin-bottom: 16px;">
+
+
+                  <p>
+                    This Guarantee is offered by all banks and building societies that accept instructions to pay Direct Debits.
+                  </p>
+
+                  <p>
+                    If there are any changes to the amount, date or frequency of your Direct Debit [ORG] will notify you 2 working days in advance of your account being debited or as otherwise agreed. If you request [ORG] to collect a payment, confirmation of the amount and date will be given to you at the time of the request.
+                  </p>
+
+                  <p>
+                    If an error is made in the payment of your Direct Debit by [ORG] or your bank or building society, you are entitled to a full and immediate refund of the amount paid from your bank or building society. If you receive a refund you are not entitled to, you must pay it back when [ORG] asks you to.
+                  </p>
+
+                  <p>
+                    You can cancel a Direct Debit at any time by simply contacting your bank or building society. Written confirmation may be required. Please also notify us [HOW?].
+                  </p>
+                </div>
+              </details>
+
+
+
+      <p>
+        You can also <a href="index">set up a Direct Debit by other methods</a>.
+      </p>
+
+
+            <h2 class="govuk-heading-m">
+              Data protection
+            </h2>
+
+            <p>
+              To find out how the information you provde on this digital service may be used, please see our <a href="#">privacy notice</a>.
+            </p>
+
+
+
+    </div>
+  </div>
+
+{% endblock %}
+
+
+{% block footer %}
+
+{{ govukFooter({
+  meta: {
+    html: 'New footer'
+  }
+}) }}
+
+{% endblock %}

@@ -1,0 +1,77 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+
+
+
+  <a class="govuk-back-link" href="/url/of/previous/page">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">Set up a Direct Debit</span>
+      <h1 class="govuk-heading-xl">
+        Check the property
+      </h1>
+
+      <form class="post" method="post" action="address_check_check">
+
+      <h2 class="govuk-heading-m">
+        Property you are setting a Direct Debit up for
+      </h2>
+
+      <p>
+        <b>Council tax number</b><br>
+        12345678
+      </p>
+
+      <p>
+        <b>Address</b><br>
+        123 Main Road<br>
+        Greenwich<br>
+        SE10 1AA
+      </p>
+
+      {{ govukRadios({
+  classes: "govuk-radios--inline",
+  idPrefix: "correct-property",
+  name: "correct-property",
+  fieldset: {
+    legend: {
+      text: "Is this the property you want to pay council tax for?",
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+  ]
+}) }}
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

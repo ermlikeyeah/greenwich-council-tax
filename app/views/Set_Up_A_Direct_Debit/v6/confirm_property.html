@@ -1,0 +1,67 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">Set up a Direct Debit</span>
+      <h1 class="govuk-heading-xl">
+        Confirm property
+      </h1>
+
+      <form class="post" method="post" action="property_confirmation">
+
+      <p class="govuk-body-m">
+        <strong>Council tax account number</strong><br />
+        {{ data['council-tax-account-number'] }} 12345678
+      </p>
+
+      <p class="govuk-body-m">
+        <strong>Property address</strong><br />
+        123 Main Road<br>
+        Greenwich<br>
+        SE10 1AA
+      </p>
+
+      {{ govukRadios({
+  classes: "govuk-radios--inline",
+  idPrefix: "correct-property",
+  name: "correct-property",
+  fieldset: {
+    legend: {
+      text: "Is this the property you want to set up a Direct Debit for?",
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+  ]
+}) }}
+
+
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

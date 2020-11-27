@@ -1,0 +1,59 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">Set up a Direct Debit</span>
+      <h1 class="govuk-heading-xl">
+        Your address
+      </h1>
+
+      <form class="post" method="post" action="DD_date">
+
+      <p>
+        This is the address your bank account is registered at.
+      </p>
+
+      <h2 class="govuk-heading-m">Postcode</h2>
+      <p>
+        SE18 6HQ <a href="your_address">Change</a>
+      </p>
+
+{{ govukRadios({
+  idPrefix: "account-address",
+  name: "account-address",
+  fieldset: {
+    legend: {
+      text: "Select an address",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "The Woolwich Centre, Wellington Street, Woolwich, SE18 6HQ",
+      text: "The Woolwich Centre, Wellington Street, Woolwich, SE18 6HQ"
+    }
+  ]
+}) }}
+
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

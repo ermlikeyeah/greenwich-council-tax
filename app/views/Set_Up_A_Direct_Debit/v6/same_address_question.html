@@ -1,0 +1,69 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">Set up a Direct Debit</span>
+      <h1 class="govuk-heading-xl">
+        Your home address
+      </h1>
+
+      <form class="post" method="post" action="same_address_check">
+
+      <p>
+        You are arranging to pay council tax for the following address:
+      </p>
+
+      <p>
+        123 Main Road<br>
+        Greenwich<br>
+        SE10 1AA
+      </p>
+
+      {{ govukRadios({
+  classes: "govuk-radios--inline",
+  idPrefix: "same-address",
+  name: "same-address",
+  fieldset: {
+    legend: {
+      text: "Is this the same address you live at?",
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+  ]
+}) }}
+
+
+
+{{ govukDetails({
+  summaryText: "Why are we asking this?",
+  text: "We need your home address to set up your Direct Debit."
+}) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

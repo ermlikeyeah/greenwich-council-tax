@@ -1,0 +1,52 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">Set up a Direct Debit</span>
+      <h1 class="govuk-heading-xl">
+        Stop setting up a Direct Debit
+      </h1>
+
+      <form class="post" method="post" action="start">
+
+      <p>
+        You indicated this is not the property you want to set a council tax Direct Debit for.
+      </p>
+
+      <p>
+        If the property address did not match the details you entered try again. Check you are entering the council tax number and postcode as displayed on a current council tax bill.
+      </p>
+
+      <p>
+        If this error continues <a href="https://www.royalgreenwich.gov.uk/info/200160/contact_us/1997/contact_council_tax">contact the council tax team</a>.
+      </p>
+
+
+      {{ govukButton({
+        text: "Enter council tax details again"
+      }) }}
+
+      <p>
+        If you have decided to cancel setting up the Direct Debit <a href="../../Council_Tax_Account_Overview/v1/index-dd-set-up-links">return to your Council Tax overview</a>.
+
+
+
+      <p>
+        <a href=""></a>
+      </p>
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

@@ -9,6 +9,8 @@ require('./views/Set_Up_A_Direct_Debit/v1/routes-dd')(router);
 require('./views/Set_Up_A_Direct_Debit/v2/routes-dd')(router);
 require('./views/Set_Up_A_Direct_Debit/v3/routes-dd')(router);
 require('./views/Set_Up_A_Direct_Debit/v4/routes-dd')(router);
+require('./views/Set_Up_A_Direct_Debit/v5/routes-dd')(router);
+require('./views/Set_Up_A_Direct_Debit/v6/routes-dd')(router);
 
 require('./views/Amend_Direct_Debit/v1/routes-amend-DD')(router);
 

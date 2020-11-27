@@ -1,0 +1,47 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">Set up a Direct Debit</span>
+      <h1 class="govuk-heading-xl">
+        Your address
+      </h1>
+
+      <form class="post" method="post" action="your_address_2">
+
+      <p>
+        This is the address your bank account is registered at.
+      </p>
+
+      {{ govukInput({
+        label: {
+          text: "Enter your postcode"
+        },
+        classes: "govuk-input--width-10",
+        id: "postcode",
+        name: "postcode"
+      }) }}
+
+      <p>
+        <a href="your_address_manually">Enter address manually</a>
+      </p>
+
+      {{ govukButton({
+        text: "Find address"
+      }) }}
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

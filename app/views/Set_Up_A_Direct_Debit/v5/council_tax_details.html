@@ -6,29 +6,35 @@
 {% endblock %}
 
 
-
 {% block content %}
 
 
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <span class="govuk-caption-l">View a council tax balance online</span>
+      <span class="govuk-caption-l">Set up a Direct Debit</span>
 
-      <form class="post" method="post" action="postcode">
+      <h1 class="govuk-heading-xl">
+        Council tax details
+      </h1>
+
+      <p>
+        Enter the council tax account number and postcode for the property as displayed on a recent council tax bill.
+      </p>
+
+      <form class="post" method="post" action="council_tax_details_both_errors">
 
 
             {{ govukInput({
               label: {
                 text: "Council tax account number",
-                classes: "govuk-label--xl",
-                isPageHeading: false
+                classes: "govuk-label--m"
               },
               classes: "govuk-input--width-10",
               id: "council-tax-account-number",
               name: "council-tax-account-number",
               hint: {
-                text: "Must be between 8 digits long"
+                text: "Must be 8 digits long"
               },
               inputmode: "numeric",
               pattern: "[0-9]*",
@@ -36,11 +42,17 @@
             }) }}
 
 
-
-      {{ govukDetails({
-        summaryText: "Where can you find the council tax account number?",
-        text: "If you have a council tax bill for the property, you will find the postcode in the address of the property."
+      {{ govukInput({
+        label: {
+          text: "Postcode of property",
+          classes: "govuk-label--m",
+          isPageHeading: true
+        },
+        classes: "govuk-input--width-10",
+        id: "property-postcode",
+        name: "property-postcode"
       }) }}
+
 
       {{ govukButton({
         text: "Continue"
