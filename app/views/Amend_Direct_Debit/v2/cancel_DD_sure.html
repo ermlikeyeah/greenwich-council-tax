@@ -1,0 +1,71 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">Amend Direct Debit</span>
+      <h1 class="govuk-heading-xl">
+        Cancel Direct Debit
+      </h1>
+
+      <p>
+        By canceling this Direct Debit and you are remaining in the property you will need to pay the council tax for the property another way.
+      </p>
+
+      <p>
+        [what if the DD is due to go out tomorrow or the next day? can it be cancelled that quickly?]
+      </p>
+
+      <p>
+        If you wish to pay the Direct Debit from a different bank account you can <a href="">change the bank account details</a>.
+      </p>
+
+      <p>
+        If you are cancelling your Direct Debit because you are moving to another property within the borough then ...
+      </p>
+
+      <form class="post" method="post" action="DD_cancelled_confirmation">
+
+        {{ govukRadios({
+          idPrefix: "cancel-DD",
+          name: "cancel-DD",
+          fieldset: {
+            legend: {
+              text: "Are you sure you want to canel this Direct Debit?",
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "Yes",
+              text: "Yes, I want to cancel this Direct Debit"
+            },
+            {
+              value: "No",
+              text: "No, I do not want to cancel this Direct Debit"
+            }
+          ]
+        }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+      <p>
+      <a href="#">Cancel</a>
+      </p>
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

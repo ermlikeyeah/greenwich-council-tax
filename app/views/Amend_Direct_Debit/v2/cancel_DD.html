@@ -1,0 +1,76 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">Amend Direct Debit</span>
+      <h1 class="govuk-heading-xl">
+        Cancel Direct Debit
+      </h1>
+
+      <h2 class="govuk-heading-m">
+        When not to cancel your Direct Debit
+      </h2>
+
+      <p>
+        If you are moving home, contact the council's council tax team.
+      </p>
+
+      <p>
+        If you are no longer responsible for a property, contact the council's council tax team.
+      </p>
+
+      <p>
+        If you wish to pay the Direct Debit from a different bank account you can <a href="bank_details">change the bank account details</a>.
+      </p>
+
+      <h2 class="govuk-heading-m">
+        When to cancel your Direct Debit
+      </h2>
+
+      <p>
+        If you are want to continue paying council tax for the property but you do not want the payment to automatically leave a bank account you have chosen.
+      </p>
+
+      <form class="post" method="post" action="cancel_DD_reason">
+
+        {{ govukRadios({
+          idPrefix: "cancel-reason",
+          name: "cancel-reason",
+          fieldset: {
+            legend: {
+              text: "Are you sure you want to cancel this Direct Debit?",
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes, I want to cancel paying council tax for this property by Direct Debit"
+            },
+            {
+              value: "no",
+              text: "No, I do not want to cancel this Direct Debit"
+            }
+          ]
+        }) }}
+
+      {{ govukButton({
+        text: "Confirm"
+      }) }}
+
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

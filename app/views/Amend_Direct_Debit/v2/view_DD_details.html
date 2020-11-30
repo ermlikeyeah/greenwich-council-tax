@@ -1,0 +1,96 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">Amend Direct Debit</span>
+
+      <h1 class="govuk-heading-xl">
+        Direct Debit details
+      </h1>
+
+      <h2 class="govuk-heading-m">Council tax details</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key" style="width:50%;"">
+          Council tax account number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          1122334455
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Property address
+        </dt>
+        <dd class="govuk-summary-list__value">
+          123 Main Road<br>
+          Greenwich<br>
+          SE10 1AA<br>
+        </dd>
+      </div>
+      </dl>
+
+
+    <h2 class="govuk-heading-m">Payment schedule</h2>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-3">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Date of payment
+      </dt>
+      <dd class="govuk-summary-list__value">
+        15h of every month
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Payment schedule
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Paying over ten months, monthly from April to January
+      </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+    </div>
+    </dl>
+
+    <p>
+    <a class="govuk-link" href="DD_date">
+      Change payment day
+    </a>
+    </p>
+
+      <h2 class="govuk-heading-m">Bank account details</h2>
+
+      <p>
+        Paid from bank account ending in -1234
+        </p>
+
+        <p>
+        <a class="govuk-link" href="bank_details">
+          Change bank account details
+        </a>
+        </p>
+
+        <h2 class="govuk-heading-m">Cancel Direct Debit</h2>
+
+          <p>
+            <a class="govuk-link" href="cancel_DD">Cancel Direct Debit</a>
+          </p>
+
+    </div>
+  </div>
+
+{% endblock %}

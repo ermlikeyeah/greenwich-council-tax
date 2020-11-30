@@ -1,0 +1,45 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">Amend Direct Debit</span>
+
+
+      <h1 class="govuk-heading-xl">
+        Confirm date
+      </h1>
+
+      <form class="post" method="post" action="new_date_confirmation">
+
+        <p>
+          You are changing the Direct Debit monthly payment date to the 25th of every month.
+          </p>
+
+          <p>
+            You next payment will be on 25 November 2020. Your last payment for this council tax year will be on 25 January 2021.
+          </p>
+
+
+      {{ govukButton({
+        text: "Confirm"
+      }) }}
+
+      <p>
+        <a href="#">Cancel</a>
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
