@@ -1,0 +1,82 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+
+  <a class="govuk-back-link" href="/url/of/previous/page">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">Set up a Direct Debit</span>
+      <h1 class="govuk-heading-xl">
+        Bank account details
+      </h1>
+
+      <form class="post" method="post" action="check_info_provided">
+
+      {{ govukInput({
+        label: {
+          text: "Name on the account"
+        },
+        id: "name-on-account",
+        name: "name-on-account"
+      }) }}
+
+
+      {{ govukInput({
+        label: {
+          text: "Sort code"
+        },
+        hint: {
+          text: "Must be 6 digits long"
+        },
+        classes: "govuk-input--width-10",
+        id: "sort-code",
+        name: "sort-code"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Account number"
+        },
+        hint: {
+          text: "Must be between 6 and 8 digits long"
+        },
+        classes: "govuk-input--width-10",
+        id: "bank-account-number",
+        name: "bank-account-number"
+      }) }}
+
+
+      {{ govukInput({
+        label: {
+          text: "Building society roll number (if you have one)"
+        },
+        classes: "govuk-input--width-10",
+        hint: {
+          text: "You can find it on your card, statement or passbook"
+        },
+        id: "roll-number",
+        name: "roll-number",
+        spellcheck: false
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

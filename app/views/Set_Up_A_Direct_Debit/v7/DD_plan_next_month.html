@@ -1,0 +1,73 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+
+  <a class="govuk-back-link" href="/url/of/previous/page">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">Set up a Direct Debit</span>
+
+      <form class="post" method="post" action="bank_details">
+
+
+
+{{ govukRadios({
+  idPrefix: "payment-plan",
+  name: "payment-plan",
+  fieldset: {
+    legend: {
+      text: "Choose a payment schedule",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--xl"
+    }
+  },
+  items: [
+    {
+      value: "Pay £120.00 for the next 4 months",
+      text: "Pay £120.00 for the next 4 months",
+      hint: {
+        text: "Your last payment would be in March 2021"
+      }
+    },
+    {
+      value: "Pay £240.00 for the next 2 months",
+      text: "Pay £240.00 for the next 2 months",
+      hint: {
+        text: "Your last payment would be in January 2021"
+      }
+    }
+
+  ]
+}) }}
+
+<p>
+  Your first payment will be taken on {{ data['payment-date'] }} December 2020.
+</p>
+
+
+{{ govukInsetText({
+  text: "Your Direct Debit will automatically be renewed every 12 months unless we receive notice to cancel it from your bank."
+}) }}
+
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

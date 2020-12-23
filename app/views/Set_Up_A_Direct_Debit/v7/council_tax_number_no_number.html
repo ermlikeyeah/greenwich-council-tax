@@ -1,0 +1,71 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+
+
+  <a class="govuk-back-link" href="/url/of/previous/page">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {{ govukErrorSummary({
+        "titleText": "There is a problem",
+        "errorList": [
+          {
+            "text": "Enter an 8 digit council tax reference number",
+            "href": "#council-tax-account-number"
+          }
+        ]
+      }) }}
+
+      <span class="govuk-caption-l">Set up a Direct Debit</span>
+
+      <form class="post" method="post" action="council_tax_number_check">
+
+            {{ govukInput({
+              label: {
+                text: "Council tax account number",
+                classes: "govuk-label--xl",
+                isPageHeading: false
+              },
+              classes: "govuk-input--width-10 ",
+              id: "council-tax-account-number",
+              name: "council-tax-account-number",
+              hint: {
+                text: "Must be between 8 digits long"
+              },
+              errorMessage: {
+                text: "Enter an 8 digit council tax reference number"
+              },
+              inputmode: "numeric",
+              pattern: "[0-9]*",
+              spellcheck: true
+            }) }}
+
+
+
+      {{ govukDetails({
+        summaryText: "Where can you find the council tax account number?",
+        text: "If you have a council tax bill for the property, you will find the council tax account number on the front of the bill under the property address."
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,285 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+
+  <a class="govuk-back-link" href="/url/of/previous/page">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">Set up a Direct Debit</span>
+      <h1 class="govuk-heading-xl">
+        Check your information is correct
+      </h1>
+
+      <h2 class="govuk-heading-m">Council tax details</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Council tax account number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['council-tax-account-number'] }}
+        </dd>
+          <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="council_tax_number">
+                Change<span class="govuk-visually-hidden"> council tax account number</span>
+            </a>
+          </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Property address
+        </dt>
+        <dd class="govuk-summary-list__value">
+          123 Main Road
+          Greenwich
+          SE10 1AA
+        </dd>
+          <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="council_tax_number">
+                Change<span class="govuk-visually-hidden"> property address</span>
+            </a>
+          </dd>
+      </div>
+      </dl>
+
+      <h2 class="govuk-heading-m">Personal details</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Your full name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['full-name'] }}
+        </dd>
+          <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="your_personal_details">
+                Change<span class="govuk-visually-hidden"> personal details</span>
+            </a>
+          </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Email address
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['emailAddress'] }}
+        </dd>
+          <dd class="govuk-summary-list__actions">
+
+          </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Telephone number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['phoneNumber'] }}
+        </dd>
+          <dd class="govuk-summary-list__actions">
+
+          </dd>
+      </div>
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    Send council tax correspondance by email
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['comms-by-email'] }}
+  </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="communicaton_preferences">
+        Change<span class="govuk-visually-hidden"> send council tax correspondance by email</span>
+    </a>
+    </dd>
+</div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Your address
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['account-address'] }}
+        </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="your_address_2">
+              Change<span class="govuk-visually-hidden"> your address</span>
+          </a>
+          </dd>
+      </div>
+    </dl>
+
+    <h2 class="govuk-heading-m">Payment schedule</h2>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key" style="border-bottom: none; width: 50%;">
+        Due date
+      </dt>
+      <dd class="govuk-summary-list__key" style="border-bottom: none;">
+        Amount
+      </dd>
+        <dd class="govuk-summary-list__actions" style="border-bottom: none;">
+            <a class="govuk-link" href="DD_plan_this_month">
+              Change<span class="govuk-visually-hidden"> payment schedule</span>
+          </a>
+        </dd>
+    </div>
+        <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key" style="border-bottom: none;">
+        {{ data['payment-date'] }} November 2020
+      </dt>
+      <dd class="govuk-summary-list__value" style="border-bottom: none;">
+        £160.00
+      </dd>
+        <dd class="govuk-summary-list__actions" style="border-bottom: none;">
+        </dd>
+    </div>
+    <div class="govuk-summary-list__row" >
+      <dt class="govuk-summary-list__key" style="border-bottom: none;">
+        {{ data['payment-date'] }} December 2020
+      </dt>
+      <dd class="govuk-summary-list__value" style="border-bottom: none;">
+        £160.00
+      </dd>
+        <dd class="govuk-summary-list__actions" style="border-bottom: none;">
+        </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        {{ data['payment-date'] }} January 2021
+      </dt>
+      <dd class="govuk-summary-list__value">
+        £160.00
+      </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+    </div>
+    <div class="govuk-summary-list__row" style="background: #b1b4b6;">
+      <dt class="govuk-summary-list__key" style=" padding-left: 8px;">
+        Total
+      </dt>
+      <dd class="govuk-summary-list__value">
+        £480.00
+      </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+    </div>
+  </dl>
+
+      <h2 class="govuk-heading-m">Bank account details</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Name on the account
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['name-on-account'] }}
+        </dd>
+          <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="bank_details">
+                Change<span class="govuk-visually-hidden"> bank account details</span>
+            </a>
+          </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Sort code
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['sort-code'] }}
+        </dd>
+          <dd class="govuk-summary-list__actions">
+
+          </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Account number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['bank-account-number'] }}
+        </dd>
+          <dd class="govuk-summary-list__actions">
+
+          </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Bank name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['bank-name'] }}
+        </dd>
+          <dd class="govuk-summary-list__actions">
+
+          </dd>
+      </div>
+    </dl>
+
+
+    <h2 class="govuk-heading-m">
+      The Direct Debit Guarantee
+    </h2>
+
+<img src="/public/images/dd-logo.jpg" alt="Direct Debit logo" style="height:20% ; width: 20%; margin-bottom: 16px;">
+
+    <p>
+      This Guarantee is offered by all banks and building societies that accept instructions to pay Direct Debits.
+    </p>
+
+    <p>
+      If there are any changes to the amount, date or frequency of your Direct Debit [ORG] will notify you 2 working days in advance of your account being debited or as otherwise agreed. If you request [ORG] to collect a payment, confirmation of the amount and date will be given to you at the time of the request.
+    </p>
+
+    <p>
+      If an error is made in the payment of your Direct Debit by [ORG] or your bank or building society, you are entitled to a full and immediate refund of the amount paid from your bank or building society. If you receive a refund you are not entitled to, you must pay it back when [ORG] asks you to.
+    </p>
+
+    <p>
+      You can cancel a Direct Debit at any time by simply contacting your bank or building society. Written confirmation may be required. Please also notify us [HOW?].
+    </p>
+
+        <h2 class="govuk-heading-m">
+          Terms and conditions for Royal Borough of Greenwich Council Tax Direct Debit Online
+        </h2>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>You must provide a valid email address in order to use this service. We will use this to send you important notifications about your Direct Debit. The full messages will be available in your online tax account.</li>
+          <li>You must make sure that your bank or building society will accept Direct Debit Instruction for the account you want to use. Direct Debit collections can only be made once the Direct Debit Instruction is accepted.</li>
+          <li>When submitting a new Direct Debit Instruction, you must be authorised to sign for the account as either the sole signatory or authorised to sign on behalf of all the other signatories. If more than one signature is required to authorise the Direct Debit on this account, you will need to complete a paper version of the mandate form.</li>
+          <li>The account for your Direct Debit must be a bank account registered in the UK and in British pounds.</li>
+          <li>You must make sure you have enough money in your account to pay the tax due on collection day.</li>
+          <li>The Direct Debit will only take the amount we tell you about in advance.</li>
+          <li>If you know that the Direct Debit collection will fail, you must pay by the due date using another method.</li>
+          <li>You can cancel or change your Direct Debit Instruction [using our online service up to 5 working days before your council tax payment is due].</li>
+          <li>Your bank may cancel your Direct Debit Instruction if it has not been used for 24 months from the date of setting it up, or from the date of the last payment. This is covered by the Direct Debit dormancy period rule.</li>
+          <li>Payments will appear on your bank statement as ‘XXXXXXX’</li>
+        </ul>
+
+    <form class="post" method="post" action="submit_info">
+
+
+    <button class="govuk-button" data-module="govuk-button">Confirm and send information</button>
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
